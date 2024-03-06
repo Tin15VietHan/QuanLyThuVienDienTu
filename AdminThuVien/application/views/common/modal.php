@@ -34,17 +34,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-3">
-                            <label for="manv">Mã nhân viên</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="manv" name="manv" class="form-control" value=""
-                                   placeholder="Nhập mã nhân viên">
-                            <span style="color: red; font-style: italic;" class="error error-manv"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="manv">Email</label>
+                            <label for="email">Email</label>
                         </div>
                         <div class="col-sm-9">
                             <input type="text" id="mail" name="email" class="form-control" value=""
@@ -54,33 +44,22 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-3">
-                            <label for="manv">Mật khẩu</label>
+                            <label for="username">Tài Khoản</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" id="username" name="username" class="form-control" value=""
+                                   placeholder="Nhập tài khoản">
+                            <span style="color: red; font-style: italic;" class="error error-username"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="password">Mật khẩu</label>
                         </div>
                         <div class="col-sm-9">
                             <input type="password" id="password" name="password" class="form-control" value=""
                                    placeholder="Nhập Mật khẩu">
                             <span style="color: red; font-style: italic;" class="error error-password"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3 padd-right-0">
-                            <label for="manv">Nhóm người dùng</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="group-user">
-                                <div class="group-selbox">
-
-                                </div>
-                                <span style="color: red; font-style: italic;" class="error error-group"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="stock">Kho làm việc</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="stock-selbox"></div>
                         </div>
                     </div>
                 </form>
@@ -99,7 +78,7 @@
 <!-- end create employee -->
 
 <!-- Start create function -->
-<div class="modal fade" id="create-func" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="create-sv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -127,13 +106,13 @@
                         <div class="col-sm-9">
                             <input type="text" id="permisstion_name" name="permisstion_name" class="form-control"
                                    value="" placeholder="Nhập tên chức năng">
-                            <span style="color: red; font-style: italic;" class="error error-permisstion_name"></span>
+                            <span style="color: red; font-style: italic;" class="error error-permisstion_name" onclick=""></span>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm btn-crfunc"><i class="fa fa-check"></i> Lưu</button>
+                <button type="button" class="btn btn-primary btn-sm btn-crfunc"><i class="fa fa-check" onclick="cms_crusersv()"></i> Lưu</button>
                 <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
                         class="fa fa-undo"></i> Bỏ qua
                 </button>
@@ -143,77 +122,6 @@
 </div>
 <!-- end create function -->
 
-<!-- Start create group -->
-<div class="modal fade" id="create-group" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                    Thêm nhóm người dùng </h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="group-name">Tên Nhóm</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="group-name" name="group_name" class="form-control" value=""
-                                   placeholder="Nhập tên nhóm người dùng">
-                            <span style="color: red; font-style: italic;" class="error error-group_name"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm btn-crgroup"><i class="fa fa-check"></i> Lưu
-                </button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end create function -->
-
-<!-- Start create group -->
-<div class="modal fade" id="create-store" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                    Thêm kho </h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="group-name">Tên Kho</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="store-name" name="store_name" class="form-control" value=""
-                                   placeholder="Nhập tên kho">
-                            <span style="color: red; font-style: italic;" class="error error-store_name"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" onclick="cms_crstore();" ><i class="fa fa-check"></i> Lưu
-                </button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end create function -->
 
 <!-- start create customer -->
 

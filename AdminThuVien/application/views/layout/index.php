@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo CMS_BASE_URL; ?>"/>
-    <link rel="shortcut icon" type="image/png" href="public/templates/images/check.png"/>
+    <link rel="shortcut icon" type="image/png" href="public/templates/images/favicon.png"/>
     <title><?php echo isset($seo['title']) ? $seo['title'] : 'Phần mềm quản lý thư viện điện tử'; ?></title>
     <link href="public/templates/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/templates/css/bootstrap-datepicker.css" rel="stylesheet">

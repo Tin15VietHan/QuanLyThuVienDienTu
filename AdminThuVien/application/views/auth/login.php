@@ -44,16 +44,4 @@
             </form>
         </div>
     </div>
-
-    <!-- <div class="link-action text-center">
-        <div class="col-sm-6 col-xs-12">
-            <a href="authentication/fg_password" style="display:inline-block; margin-top: 5px;" class="fg-passw">Quên
-                mật khẩu</a>
-        </div>
-        <div class="col-sm-6 col-xs-12">
-            <a href="authentication/register" style="display:inline-block; margin-top: 5px;" class="register">Đăng
-                kí</a>
-        </div>
-
-    </div> -->
 </div>

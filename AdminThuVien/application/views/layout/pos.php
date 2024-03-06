@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo CMS_BASE_URL; ?>"/>
-    <link rel="shortcut icon" type="image/png" href="public/templates/images/check.png"/>
+    <link rel="shortcut icon" type="image/png" href="public/templates/images/favicon.png"/>
     <title><?php echo isset($seo['title']) ? $seo['title'] : 'Phần mềm quản lý bán hàng'; ?></title>
     <link href="public/templates/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/templates/css/font-awesome.min.css" rel="stylesheet">
@@ -100,13 +100,8 @@
                                                             <label>Nhân viên bán hàng</label>
                                                         </div>
                                                         <div class="col-md-8">
-                                                            <select class="form-control" id="sale_id">
-                                                                <option value="">Lựa chọn nhân viên bán hàng</option>
-                                                                <?php foreach ($data['sale'] as $item) { ?>
-                                                                    <option
-                                                                        value="<?php echo $item['id']; ?>"><?php echo $item['display_name']; ?></option>
-                                                                <?php } ?>
-                                                            </select>
+                                                            <?php echo (isset($user)) ?
+                            $user['display_name'] : $user['username'];?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group marg-bot-10 clearfix">
@@ -205,7 +200,7 @@
                                                         onclick="cms_save_orders(4)"><i class="fa fa-print"></i> Lưu và
                                                     in (F10)
                                                 </button>
-                                                <a href="/QLThuVienDienTu/dashboard">
+                                                <a href="/QuanLyThuVienDienTu/AdminThuVien/dashboard">
                                                     <button type="button" class="btn btn-primary"
 														onclick="cms_javascript_redirect( cms_javascrip_fullURL() )"><i
 														class="fa fa-arrow-left"></i> Trở về

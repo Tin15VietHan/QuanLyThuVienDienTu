@@ -2,8 +2,8 @@
 /************ Database ************/
 
 define('CMS_DB_HOST', 'localhost');
-define('CMS_DB_USER', 'root');
-define('CMS_DB_PASSWORD', '');
+define('CMS_DB_USER', 'id21960309_datadoan');
+define('CMS_DB_PASSWORD', 'Tin15@20092002');
 define('CMS_DB_NAME', 'pos_new_7');
 define('CMS_DB_PREFIX', 'cms_');
 

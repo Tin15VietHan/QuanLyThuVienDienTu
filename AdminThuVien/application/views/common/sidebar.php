@@ -27,6 +27,7 @@
             <li id="profit"><a href="profit"><i class="fa fa-usd"></i><b> Lợi nhuận</b></a></li>
         <?php endif; ?>
         <?php if (in_array(10, $user['group_permission'])) : ?>
+            
             <li id="config"><a href="setting"><i class="fa fa-empire"></i><b>Quản Lý Tài Khoản</b></a></li>
         <?php endif; ?>
     </ul>

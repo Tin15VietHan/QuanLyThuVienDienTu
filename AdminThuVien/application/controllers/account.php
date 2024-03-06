@@ -14,7 +14,7 @@ class Account extends CI_Controller
     public function index()
     {
         if ($this->auth == null) $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'backend');
-        $data['seo']['title'] = "Phần mềm quản lý thư viện điện tử";
+        $data['seo']['title'] = "E-Library";
         $store = $this->db->from('stores')->get()->result_array();
         $data['data']['store'] = $store;
         $store_id = $this->db->select('store_id')->from('users')->where('id', $this->auth['id'])->limit(1)->get()->row_array();
@@ -48,13 +48,4 @@ class Account extends CI_Controller
             echo $this->messages = 0;
     }
 
-    public function cms_change_store($store_id)
-    {
-        if ($this->auth == null)
-            $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'backend');
-
-        $user_id = $this->auth['id'];
-        $this->db->where('ID', $user_id)->update('users', ['store_id' => $store_id]);
-        echo $this->messages = "1";
-    }
 }

@@ -14,19 +14,39 @@ class Ajax extends CI_Controller
 
     public function cms_cruser()
     {
-        $_post = ['display', 'mail', 'password', 'group', 'username', 'store_id'];
+        $_post = ['display_name', 'mail', 'username', 'password'];
 
         foreach ($_post as $item) {
             $data[] = $this->input->post($item);
         }
         $user['display_name'] = $data[0];
-        $user['username'] = $data[4];
         $user['email'] = $data[1];
-        $user['group_id'] = $data[3];
-        $user['store_id'] = $data[5];
+        $user['username'] = $data[2];
+    
+        $user['salt'] = $this->cms_common_string->random(69);
+        $user['password'] = $this->cms_common_string->password_encode($data[3], $user['salt']);
+        $user['created'] = gmdate("Y:m:d H:i:s", time() + 7 * 3600);
+        if ($this->_check_user($user)) {
+            $this->db->insert('users', $user);
+            echo $this->messages = '1';
+        } else {
+            echo $this->messages = 'Mã nhân viên hoặc Email đã tồn tại!';
+        }
+    }
+    public function cms_crusersv()
+    {
+        echo ('Người dùng đã được thêm thành công!');
+        $_post = ['display', 'mail', 'username', 'password'];
+
+        foreach ($_post as $item) {
+            $data[] = $this->input->post($item);
+        }
+        $user['display_name'] = $data[0];
+        $user['username'] = $data[2];
+        $user['email'] = $data[1];
 
         $user['salt'] = $this->cms_common_string->random(69);
-        $user['password'] = $this->cms_common_string->password_encode($data[2], $user['salt']);
+        $user['password'] = $this->cms_common_string->password_encode($data[3], $user['salt']);
         $user['created'] = gmdate("Y:m:d H:i:s", time() + 7 * 3600);
         if ($this->_check_user($user)) {
             $this->db->insert('users', $user);

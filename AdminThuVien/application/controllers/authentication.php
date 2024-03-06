@@ -15,7 +15,7 @@ class Authentication extends CI_Controller
     public function index()
     {
         if ($this->auth != null) $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'backend');
-        $data['seo']['title'] = "Login - Phần mềm quản lý thư viện điện tử";
+        $data['seo']['title'] = "E-Library";
 
         if ($this->input->post('login')) {
             $_post = $this->input->post('data');
@@ -77,63 +77,6 @@ class Authentication extends CI_Controller
         $this->db->insert('users', $data);
     }
 
-    public function fg_password()
-    {
-        if ($this->auth != null) $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'backend');
-        $data['seo']['title'] = "Lấy lại mật khẩu - Phần mềm quản lý bán hàng";
-
-        if ($this->input->post('forgot')) {
-            $_post = $this->input->post('data');
-            $data['data']['_post'] = $_post;
-            $this->form_validation->set_error_delimiters('<span>', '</span>');
-            $this->form_validation->set_rules('data[email]', 'Email', 'trim|required|min_length[3]|max_length[150]|regex_match[/^([a-z0-9_@\.])+$/i]|callback__email');
-            if ($this->form_validation->run() == true) {
-
-                $_post = $this->cms_common_string->allow_post($_post, ['email']);
-                $user = $this->db->select('username,password,salt')->where('email', $_post['email'])->from('users')->get()->row_array();
-                if (isset($user) && !empty($user)) {
-
-                    $dataup['recode'] = $this->cms_common_string->random(69, true);
-                    $dataup['code_time_out'] = time() + 3600;
-                    $html = "<div class='alert-container' style='background: #DDD; padding: 20px 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#464646;font-size: 14px;'>
-                            <div class='alert' style='background: #fff; width: 80%; margin: 20px auto;'>
-                                <div class='alert-heading' style='background: #0B87C9; color: #fff; padding: 15px 10px; font-size: 20px; font-family: tahoma,arial, sans-serif;'>
-
-                                </div>
-                                <div class='alert-body' style='padding: 25px 20px;'>
-                                    Phần mềm xin chào,<br /><br />
-
-                                    Bạn vừa yêu cầu lấy lại thông tin tài khoản!<br /><br />
-
-                                    Xin hãy bấm vào liên kết để hoàn tất quá trình!<br /><br />
-                                    <div class='link' style='margin: 0 auto; text-align: center;'>
-                                     <a href='" . CMS_BASE_URL . 'authentication/reset/?email=' . urlencode($_post['email']) . '&code=' . $dataup['recode'] . "' style='display: inline-block; margin: 0 auto; padding: 10px 90px; background: #0B87C9; color: #fff; text-decoration: none; text-align: center; '>Lấy lại mật khẩu</a>
-                                    </div>
-                                    <br/><br/>
-                                        Hoặc bạn có thể copy liên kết sau vào trình duyệt  " . CMS_BASE_URL . 'authentication/reset/?email=' . base64_encode(urlencode($_post['email'])) . '&code=' . $dataup['recode'] . "
-                                    <br/><br/>
-                                    Xin cám ơn!
-                                </div>
-                                <div class='alert-footer' style='padding: 25px 20px; border-top: 1px solid #ddd;' >
-                                    Quangna.vn - 128 Nguyễn Trãi P. 17, Q. Gang Thép, Thái Nguyên. ĐT: 1900 2045
-                                </div>
-                            </div>
-                          </div>";
-                    $param = array('name' => 'PhongTran', 'from' => 'phongtt7@gmail.com', 'password' => '01257388742', 'to' => $_post['email'], 'subject' => 'Lấy lại thông tin tài khoản - phongtran.info', 'message' => $html);
-                    if ($this->cms_common->sentMail($param)) {
-                        $this->db->where('username', $user['username'])->update('users', $dataup);
-                        $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'authentication/alert/?email=' . base64_encode($_post['email']) . '');
-                    }
-
-                }
-
-
-            }
-        }
-
-        $data['template'] = 'auth/fg_pass';
-        $this->load->view('layout/auth', isset($data) ? $data : null);
-    }
 
     public function _email($email)
     {
@@ -146,65 +89,10 @@ class Authentication extends CI_Controller
         return true;
     }
 
-    public function alert()
-    {
-        $data['seo']['title'] = "Lấy lại mật khẩu - Phần mềm quản lý bán hàng";
-
-        $data['template'] = 'auth/alert';
-        $this->load->view('layout/auth', isset($data) ? $data : null);
-    }
-
-    /*
-     * Reset password
-     ****************************************************/
-    public function reset()
-    {
-        if ($this->auth != null) $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'backend');
-        $data['seo']['title'] = "Lấy lại mật khẩu - Phần mềm quản lý bán hàng";
-
-        $mail = urldecode($this->input->get('email'));
-        $code = $this->input->get('code');
-
-        if (isset($mail) && !empty($mail) && isset($mail) && !empty($code)) {
-            $user = $this->db->select('username, recode, code_time_out')->where(['email' => $mail, 'recode' => $code])->from('users')->get()->row_array();
-            if (!isset($user) || (count($user) == 0) || $user['code_time_out'] <= time()) $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'authentication/n_link');
-            if ($this->input->post('reset')) {
-                $_post = $this->input->post('data');
-                $data['data']['_post'] = $_post;
-                $this->form_validation->set_error_delimiters('<li>', '</li>');
-                $this->form_validation->set_rules('data[email]', 'email', 'trim|required|min_length[3]|max_length[100]|regex_match[/^([a-z0-9_@\.])+$/i]');
-                $this->form_validation->set_rules('data[password]', 'mật khẩu', 'trim|required|min_length[6]');
-                if ($this->form_validation->run() == true) {
-                    $_post = $this->cms_common_string->allow_post($_post, ['email', 'password']);
-                    $_post['salt'] = $this->cms_common_string->random(69, true);//tạo ra một chuỗi ngẫu nhiên
-                    $_post['password'] = $this->cms_common_string->password_encode($_post['password'], $_post['salt']);//mã hóa mật khẩu bằng cách nối chuỗi theo thứ tự định sẵn.
-                    $_post['updated'] = gmdate("Y:m:d H:i:s", time() + 60);
-                    $_post['recode'] = '';
-                    $_post['code_time_out'] = '';
-                    $this->db->where('username', $user['username'])->update('users', $_post);
-                    $this->cms_common_string->cms_jsredirect('Thay đổi tài khoản thành công!', CMS_BASE_URL . 'backend');
-                }
-            }
-        }
-        $data['template'] = "auth/reset";
-        $this->load->view('layout/auth', isset($data) ? $data : null);
-
-    }
-
-    /*
-     * Alert link expired
-     ****************************************************/
-    public function n_link()
-    {
-        $data['seo']['title'] = 'Thông báo - Phần mềm quan lý bán hàng';
-
-        $data['template'] = 'auth/n_link';
-        $this->load->view('layout/auth', isset($data) ? $data : null);
-    }
 
     public function logout()
     {
-        if ($this->auth == null) $this->cms_common_string->cms_redirect('https://localhost/QLThuVienDienTu/authentication');
+        if ($this->auth == null) $this->cms_common_string->cms_redirect('https://localhost/QuanLyThuVienDienTu/AdminThuVien/authentication');
         CMS_Cookie::delete('user_logged' . CMS_PREFIX);
         $this->cms_common_string->cms_redirect('https://localhost/QuanLyThuVienDienTu/AdminThuVien/authentication');
 

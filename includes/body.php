@@ -5,8 +5,8 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Moderna</span></h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>E-Library</span></h2>
+          <p class="animate__animated animate__fadeInUp"> E-Library là một nguồn thông tin đáng tin cậy và đa dạng cho mọi người yêu thích đọc sách và tìm kiếm kiến thức. Chúng tôi cung cấp một bộ sưu tập rộng lớn các tựa sách từ nhiều thể loại khác nhau, từ tiểu thuyết, văn học, khoa học, kinh doanh, đến tự sách và sách thiếu nhi.</p>
           <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
         </div>
       </div>
@@ -14,8 +14,8 @@
       <!-- Slide 2 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+          <h2 class="animate__animated animate__fadeInDown">E-Library</h2>
+          <p class="animate__animated animate__fadeInUp">Với giao diện dễ sử dụng và tính năng tìm kiếm tiên tiến, bạn có thể dễ dàng khám phá và tìm kiếm các tựa sách yêu thích của mình. Ngoài ra, bạn cũng có thể tạo tài khoản cá nhân để lưu trữ và quản lý danh sách sách đọc của riêng bạn.</p>
           <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
         </div>
       </div>
@@ -23,8 +23,8 @@
       <!-- Slide 3 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+          <h2 class="animate__animated animate__fadeInDown">E-Library</h2>
+          <p class="animate__animated animate__fadeInUp">Chúng tôi không chỉ cung cấp các tựa sách phổ biến và mới nhất, mà còn liên tục cập nhật và mở rộng bộ sưu tập để đáp ứng nhu cầu đọc sách đa dạng của cộng đồng người đọc.Hãy khám phá [Tên Trang Web Thư Viện] ngay hôm nay và bắt đầu hành trình khám phá thế giới văn hóa và kiến thức mới mẻ cùng chúng tôi!</p>
           <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
         </div>
       </div>

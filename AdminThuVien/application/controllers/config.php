@@ -19,7 +19,7 @@ class Config extends CI_Controller
         if ($this->auth == null || !in_array(10, $this->auth['group_permission']))
             $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'backend');
 
-        $data['seo']['title'] = "Phần mềm quản lý thư viện điện tử";
+        $data['seo']['title'] = "E-Library";
         $user = $this->db->select('users.id, username, email, display_name, user_status, group_name ')->from('users')->join('users_group', 'users_group.id = users.group_id')->get()->result_array();
         $data['data']['template'] = $this->db->select('content')->from('templates')->where('id', 1)->limit(1)->get()->row_array();
         $data['data']['list_template'] = $this->db->from('templates')->get()->result_array();
@@ -60,16 +60,5 @@ class Config extends CI_Controller
        echo $this->message = $template['content'];
     }
 
-    public function cms_crstore($store_name)
-    {
-        $count = $this->db->where('stock_name', $store_name)->from('stores')->count_all_results();
-        if ($count == 0) {
-            $data = ['stock_name' => $store_name, 'user_init'=>$this->auth['id']];
-            $this->db->insert('stores', $data);
-            echo $this->messages = '1';
-        } else {
-            echo $this->messages = 'Nhóm Chức năng ' . $store_name . ' đã tồn tại trong hệ thống.Vui lòng tạo tên nhóm khác.';
-        }
-    }
 }
 

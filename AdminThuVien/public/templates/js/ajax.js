@@ -350,11 +350,9 @@ function cms_adapter_ajax($param) {
 function cms_cruser() {
     "use strict";
     var $display = $.trim($('#frm-cruser #display_name').val());
-    var $username = $.trim($('#frm-cruser #manv').val());
     var $mail = $.trim($('#frm-cruser #mail').val());
+    var $username = $.trim($('#frm-cruser #username').val());
     var $password = $.trim($('#frm-cruser #password').val());
-    var $group = $('#frm-cruser .group-user .group-selbox #sel-group').val();
-    var $stock = $('#frm-cruser .stock-selbox #sel-stock').val();
     $('#frm-cruser .group-user .group-selbox #sel-group').on('change', function () {
         $group = $(this).val();
     });
@@ -364,9 +362,9 @@ function cms_cruser() {
         $('.error-display_name').text('');
     }
     if ($username.length == 0) {
-        $('.error-manv').text('Vui lòng nhập email!');
+        $('.error-username').text('Vui lòng nhập Tài Khoản!');
     } else {
-        $('.error-manv').text('');
+        $('.error-username').text('');
     }
     if ($mail.length == 0) {
         $('.error-mail').text('Vui lòng nhập email!');
@@ -379,14 +377,12 @@ function cms_cruser() {
         $('.error-password').text('');
     }
 
-    if ($display && $mail && $password && $group && $username) {
+    if ($display && $mail && $password  && $username) {
         var $data = {
             'display': $display,
             'username': $username,
             'mail': $mail,
-            'group': $group,
             'password': $password,
-            'store_id': $stock
         };
         var $param = {
             'type': 'POST',
@@ -430,15 +426,11 @@ function cms_upuser() {
 function cms_save_item_user(id) {
     var $display_name = $('#user .table-user tr.edit-tr-item-' + id + ' td.itdisplay_name input').val();
     var $mail = $('#user .table-user tr.edit-tr-item-' + id + ' td.itemail input').val();
-    var $group = $('#user .table-user tr.edit-tr-item-' + id + ' td.itgroup_name #sel-group').val();
-    var $status = $('#user .table-user tr.edit-tr-item-' + id + ' td.ituser_status .ituser_status').val();
     var $data = {
         'data': {
             'id': id,
             'display_name': $display_name,
             'email': $mail,
-            'group_id': $group,
-            'user_status': $status
         }
     };
     var $param = {
