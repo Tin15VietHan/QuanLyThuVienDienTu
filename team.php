@@ -54,7 +54,7 @@
           <li><a class="" href="index.html">Home</a></li>
           <li><a class="active" href="team.php">Team</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="QLThuVienDienTu/index.php">Admin Login</a></li>
+          <li><a href="AdminThuVien\index.php">Admin Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

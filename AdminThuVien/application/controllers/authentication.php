@@ -206,7 +206,7 @@ class Authentication extends CI_Controller
     {
         if ($this->auth == null) $this->cms_common_string->cms_redirect('https://localhost/QLThuVienDienTu/authentication');
         CMS_Cookie::delete('user_logged' . CMS_PREFIX);
-        $this->cms_common_string->cms_redirect('https://localhost/QLThuVienDienTu/authentication');
+        $this->cms_common_string->cms_redirect('https://localhost/QuanLyThuVienDienTu/AdminThuVien/authentication');
 
     }
 }
