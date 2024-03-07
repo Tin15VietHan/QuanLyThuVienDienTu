@@ -62,6 +62,22 @@
                             <span style="color: red; font-style: italic;" class="error error-password"></span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-sm-3 padd-right-0">
+                            <label for="group">Kiểu tài khoản</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="group-user">
+                                <div class="group-selbox">
+                                <select class="form-control" id="'.$name.'" name="'.$name.'">';
+                                        <!-- for ($i=0; $i<count($giatri2)-1; $i++)   
+                                        echo '<option value="'.$giatri2[$i].'">'.$ten2[$i].' (ID Truyện '.$ten3[$i].')</option>';
+                                        echo '</select>'; -->
+                                </div>
+                                <span style="color: red; font-style: italic;" class="error error-group"></span>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">

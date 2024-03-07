@@ -353,6 +353,7 @@ function cms_cruser() {
     var $mail = $.trim($('#frm-cruser #mail').val());
     var $username = $.trim($('#frm-cruser #username').val());
     var $password = $.trim($('#frm-cruser #password').val());
+    var $group = $('#frm-cruser .group-user .group-selbox #sel-group').val();
     $('#frm-cruser .group-user .group-selbox #sel-group').on('change', function () {
         $group = $(this).val();
     });
@@ -383,6 +384,7 @@ function cms_cruser() {
             'username': $username,
             'mail': $mail,
             'password': $password,
+            'group': $group
         };
         var $param = {
             'type': 'POST',

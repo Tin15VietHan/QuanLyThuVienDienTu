@@ -11,7 +11,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="active " href="index.php">Home</a></li>
-          <li><a href="team.php">Team</a></li>
+          <li><a href="includes/team.php">Team</a></li>
           <li><a href="AdminThuVien/authentication">Login Admin<i class='bx bx-log-in' style="font-size: large;"></i></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
