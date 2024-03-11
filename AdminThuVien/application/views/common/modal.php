@@ -11,6 +11,21 @@
     <div class="ajax-success-ct"></div>
 </div>
 <!-- Start create employee -->
+<?php  
+    $sql = $this->db->select('id, group_name')->from('users_group')->get()->result_array(); 
+
+    $group_names = array(); // Khởi tạo mảng để lưu trữ group_name
+    $group_id = array();
+
+    // Lặp qua mảng kết quả và lấy giá trị group_name
+    foreach ($sql as $row) {
+        $group_names[] = $row['group_name'];
+        $group_id[] = $row['id'];
+    }
+    // In ra mảng chứa group_name của tất cả các hàng
+    //echo "<pre>"; print_r($group_names[1]); echo "</pre>"; 
+?>
+
 <div class="modal fade" id="create-nv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -67,15 +82,12 @@
                             <label for="group">Kiểu tài khoản</label>
                         </div>
                         <div class="col-sm-9">
-                            <div class="group-user">
-                                <div class="group-selbox">
-                                <select class="form-control" id="'.$name.'" name="'.$name.'">';
-                                        <!-- for ($i=0; $i<count($giatri2)-1; $i++)   
-                                        echo '<option value="'.$giatri2[$i].'">'.$ten2[$i].' (ID Truyện '.$ten3[$i].')</option>';
-                                        echo '</select>'; -->
-                                </div>
-                                <span style="color: red; font-style: italic;" class="error error-group"></span>
-                            </div>
+                            <?php
+                            echo '<select class="form-control" id="sel-group" name="group">';
+                            for ($i=0; $i<count($sql); $i++)   
+                            echo '<option value="'.$group_id[$i].'">'.$group_names[$i].'</option>';
+                            echo '</select>';
+                            ?>
                         </div>
                     </div>
                 </form>

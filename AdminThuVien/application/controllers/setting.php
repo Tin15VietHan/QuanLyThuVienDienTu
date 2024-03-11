@@ -25,11 +25,7 @@ class setting extends CI_Controller
         $data['data']['list_template'] = $this->db->from('templates')->get()->result_array();
         $data['data']['_user'] = $user;
         $data['data']['user'] = $this->auth;
-        $store = $this->db->from('stores')->get()->result_array();
-        $data['data']['store'] = $store;
-        $store_id = $this->db->select('store_id')->from('users')->where('id',$this->auth['id'])->limit(1)->get()->row_array();
 
-        $data['data']['store_id'] = $store_id['store_id'];
         $data['template'] = 'setting/setting';
         $this->load->view('layout/index', isset($data) ? $data : null);
     }

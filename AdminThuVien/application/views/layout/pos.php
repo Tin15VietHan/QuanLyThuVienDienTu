@@ -101,7 +101,7 @@
                                                         </div>
                                                         <div class="col-md-8">
                                                             <?php echo (isset($user)) ?
-                            $user['display_name'] : $user['username'];?>
+                                                            $data['user']['display_name'] : $data['user']['username'] ;?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group marg-bot-10 clearfix">

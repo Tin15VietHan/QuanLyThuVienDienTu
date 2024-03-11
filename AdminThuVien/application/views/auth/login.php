@@ -18,6 +18,7 @@
                     <input type="password" name="data[password]"
                            value="<?php echo cms_common_input(isset($_post) ? $_post : [], 'password'); ?>"
                            class="form-control" id="inputPassword3" placeholder="Mật khẩu">
+                           
                     <i class="fa fa-lock icon-right"></i>
                     <div style="margin: 10px; margin-left: 0px; color: rgb(41, 122, 207, 0.9);">
                 <input type="checkbox" onclick="myFunction()"> Hiển thị mật khẩu

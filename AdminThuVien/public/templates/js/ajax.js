@@ -353,10 +353,10 @@ function cms_cruser() {
     var $mail = $.trim($('#frm-cruser #mail').val());
     var $username = $.trim($('#frm-cruser #username').val());
     var $password = $.trim($('#frm-cruser #password').val());
-    var $group = $('#frm-cruser .group-user .group-selbox #sel-group').val();
-    $('#frm-cruser .group-user .group-selbox #sel-group').on('change', function () {
-        $group = $(this).val();
-    });
+    var $group = $('#frm-cruser #sel-group').val();
+    // $('#frm-cruser .group-user .group-selbox #sel-group').on('change', function () {
+    //     $group = $(this).val();
+    // });
     if ($display.length == 0) {
         $('.error-display_name').text('Vui lòng nhập tên hiển thị!');
     } else {
@@ -378,9 +378,9 @@ function cms_cruser() {
         $('.error-password').text('');
     }
 
-    if ($display && $mail && $password  && $username) {
+    if ($display && $mail && $password && $group && $username) {
         var $data = {
-            'display': $display,
+            'display_name': $display,
             'username': $username,
             'mail': $mail,
             'password': $password,
@@ -392,13 +392,14 @@ function cms_cruser() {
             'data': $data,
             'callback': function (data) {
                 if (data != '1') {
-                    $('.ajax-error-ct').html(data).parent().fadeIn().delay(1000).fadeOut('slow');
+                    $('.ajax-error-ct').html('Vui lòng kiểm tra lại thông tin!').parent().fadeIn().delay(1000).fadeOut('slow');
                 } else {
                     $('.btn-close').trigger('click');
 
                     $('.ajax-error-ct').hide();
                     cms_upuser();
                     $('.ajax-success-ct').html('Thêm thành viên mới thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    //location.reload();
                 }
             }
         };
@@ -441,6 +442,7 @@ function cms_save_item_user(id) {
         'data': $data,
         'callback': function (data) {
             if (data == '1') {
+                $('.ajax-success-ct').html('Sửa thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
                 cms_upuser();
                 cms_upgroup();
             } else if (data == '0') {
@@ -473,45 +475,6 @@ function cms_del_usitem($id) {
         };
         cms_adapter_ajax($param);
     }
-}
-/*
- * Tạo chức năng
- /****************************************/
-function cms_crfunc() {
-    "use strict";
-    $('.btn-crfunc').on('click', function (e) {
-        e.preventDefault();
-        var $permiss_url = $.trim($('#permisstion_url').val());
-        var $permiss_name = $.trim($('#permisstion_name').val());
-
-        if ($permiss_url.length == 0) {
-            $('.error-permisstion_url').text('Vui lòng nhập url');
-        } else {
-            $('.error-permisstion_url').text('');
-        }
-        if ($permiss_name.length == 0) {
-            $('.error-permisstion_name').text('Vui lòng nhập tên chức năng');
-        } else {
-            $('.error-permisstion_name').text('');
-        }
-        if ($permiss_url && $permiss_name) {
-            var $param = {
-                'type': 'POST',
-                'url': 'ajax/cms_crfunc',
-                'data': {'url': $permiss_url, 'name': $permiss_name},
-                'callback': function (data) {
-                    if (data != '1') {
-                        $('.ajax-error-ct').html(data).parent().fadeIn().delay(1000).fadeOut('slow');
-                    } else {
-                        $('.btn-close').trigger('click');
-                        $('.ajax-error-ct').hide();
-                        cms_upfunc();
-                    }
-                }
-            };
-            cms_adapter_ajax($param);
-        }
-    });
 }
 
 function cms_save_template() {

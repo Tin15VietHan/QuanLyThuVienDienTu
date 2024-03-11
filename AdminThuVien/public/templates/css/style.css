@@ -293,6 +293,7 @@ section.main div.sidebar.sidebar-fixed {
     height: 100%;
     border-right: 1px solid #ccc;
     z-index: 1000;
+    width: 250px;
 }
 
 section.main div.sidebar.sidebar-fixed ul.nav.nav-list li {
@@ -300,11 +301,13 @@ section.main div.sidebar.sidebar-fixed ul.nav.nav-list li {
     position: relative;
     margin-top: 0;
     line-height: 30px;
+    width: 250px;
 }
 
 section.main div.sidebar.sidebar-fixed ul.nav.nav-list li a {
     box-shadow: none;
     color: #464646;
+    width: 250px;
 }
 
 section.main div.sidebar.sidebar-fixed ul.nav.nav-list li a:hover, section.main div.sidebar.sidebar-fixed ul.nav.nav-list li a:focus {
@@ -315,6 +318,7 @@ section.main div.sidebar.sidebar-fixed ul.nav.nav-list li a:hover, section.main 
     box-shadow: none;
     border-radius: 0;
     border-right: 3px solid #2B7DBC;
+    width: 250px;
 }
 
 section.main div.sidebar.sidebar-fixed ul.nav.nav-list li a i.fa {
@@ -324,7 +328,7 @@ section.main div.sidebar.sidebar-fixed ul.nav.nav-list li a i.fa {
 
 section.main div.main-content {
     margin-top: 60px;
-    margin-left: 1%;
+    margin-left: 0%;
     font-size: 14px;
     /**********************
           CUSTOMER
