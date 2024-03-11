@@ -28,6 +28,10 @@ class Product extends CI_Controller
         $this->load->view('layout/index', isset($data) ? $data : null);
     }
 
+    public function cms_upproduct(){
+        // code up file
+    }
+
     public function cms_vcrproduct()
     {
         if ($this->auth == null) $this->cms_common_string->cms_redirect(CMS_BASE_URL . 'backend');

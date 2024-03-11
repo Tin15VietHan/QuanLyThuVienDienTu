@@ -13,7 +13,7 @@
                             <button type="button" class="btn btn-primary" onclick="cms_vcrproduct('1')"><i
                                     class="fa fa-plus"></i> Tạo sản phẩm
                             </button>
-                            <button type="button" class="btn btn-success"><i class="fa fa-download"></i> Xuất Excel</button>
+                            <button type="button" class="btn btn-success"><i onclick="cms_upproduct()" class="fa fa-download"></i> Up Excel</button>
                         </div>
                     </div>
                 </div>

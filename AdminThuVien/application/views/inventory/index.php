@@ -35,7 +35,6 @@
                                         <td><?php echo $val['email']; ?></td>
                                         <td><?php echo ($val['display_name'] != '') ? $val['display_name'] : '-'; ?></td>
                                         <td><?php echo '<span class="user_group"><i class="fa fa-male"></i> ' . $val['group_name'] . '</span>'; ?></td>
-                                        <td class="text-center"><?php echo cms_render_html($val['user_status'], 'user_status', ['fa-unlock', 'fa-lock'], ['Hoạt động', 'Tạm ngừng']); ?></td>
                                         <td class="text-center"><i class="fa fa-pencil-square-o edit-item" title="Sửa"
                                                                    onclick="cms_edit_usitem(<?php echo $val['id']; ?>)"
                                                                    style="margin-right: 10px; cursor: pointer;"></i><i

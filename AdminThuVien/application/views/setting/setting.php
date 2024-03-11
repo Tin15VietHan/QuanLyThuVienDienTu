@@ -1,3 +1,18 @@
+<?php  
+    $sql = $this->db->select('id, group_name')->from('users_group')->get()->result_array(); 
+
+    $group_names = array(); // Khởi tạo mảng để lưu trữ group_name
+    $group_id = array();
+
+    // Lặp qua mảng kết quả và lấy giá trị group_name
+    foreach ($sql as $row) {
+        $group_names[] = $row['group_name'];
+        $group_id[] = $row['id'];
+    }
+    // In ra mảng chứa group_name của tất cả các hàng
+    //echo "<pre>"; print_r($group_names[1]); echo "</pre>"; 
+?>
+
 <div class="setting">
     <ul class="nav nav-tabs tab-setting" role="tablist">
         <li role="presentation" class="active"><a href="#user" aria-controls="home" role="tab" data-toggle="tab"><i
@@ -16,7 +31,6 @@
                         </button>
                         | <i class="fa fa-refresh" style="font-size: 17px; cursor: pointer;" onclick="cms_upuser()"></i>
                     </div>
-
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive ">
@@ -62,6 +76,7 @@
                                         <td class="itgroup_name">
                                             <div class="group-user">
                                                 <div class="group-selbox">
+                                                    echo "<pre>"; print_r($group_names[1]); echo "</pre>"; 
                                                 </div>
                                             </div>
                                         </td>
@@ -85,8 +100,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-      
+        </div>         
         <div role="tabpanel" class="tab-pane" id="print">
             <div class="col-sm-12 no-padding">
                 <div class="col-sm-6 no-padding">
