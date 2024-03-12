@@ -52,7 +52,7 @@ class Authentication extends CI_Controller
     public function _check_user($username)
     {
 
-        $count = $this->db->where('user_status', 1)->where('username', $username)->or_where('email', $username)->from('users')->count_all_results();
+        $count = $this->db->where('username', $username)->or_where('email', $username)->from('users')->count_all_results();
         if ($count == 0) {
             $this->form_validation->set_message('_check_user', 'Tài khoản đăng nhập không hợp lệ.');//tự tạo câu lệnh xuất riêng vs hàm riêng
             return false;

@@ -28,9 +28,10 @@ class Product extends CI_Controller
         $this->load->view('layout/index', isset($data) ? $data : null);
     }
 
-    public function cms_upproduct(){
-        // code up file
+    function openFileSelector() {echo "<pre>"; print_r('ok'); echo "</pre>";
+    // Hiển thị thông báo
     }
+    
 
     public function cms_vcrproduct()
     {

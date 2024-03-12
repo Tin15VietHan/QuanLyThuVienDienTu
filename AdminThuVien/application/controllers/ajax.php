@@ -101,6 +101,11 @@ class Ajax extends CI_Controller
         }
     }
 
+    function openFileSelector() {
+        echo $this->messages = '1';
+        // Hiển thị thông báo
+        }
+
     public function cms_save_item_user()
     {
         $data = $this->input->post('data');
@@ -128,6 +133,7 @@ class Ajax extends CI_Controller
         }
 
     }
+
 
     private function _check_mail($mail)
     {

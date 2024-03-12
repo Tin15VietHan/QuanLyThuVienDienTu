@@ -1,3 +1,5 @@
+
+
 <div class="products">
     <div class="breadcrumbs-fixed panel-action">
         <div class="row">
@@ -13,7 +15,7 @@
                             <button type="button" class="btn btn-primary" onclick="cms_vcrproduct('1')"><i
                                     class="fa fa-plus"></i> Tạo sản phẩm
                             </button>
-                            <button type="button" class="btn btn-success"><i onclick="cms_upproduct()" class="fa fa-download"></i> Up Excel</button>
+                            <button type="button" class="btn btn-success"><i onclick="openFileSelector()" class="fa fa-download"></i> Up Excel</button>
                         </div>
                     </div>
                 </div>

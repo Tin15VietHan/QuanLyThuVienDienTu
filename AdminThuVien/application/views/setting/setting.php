@@ -76,7 +76,7 @@
                                         <td class="itgroup_name">
                                             <div class="group-user">
                                                 <div class="group-selbox">
-                                                    echo "<pre>"; print_r($group_names[1]); echo "</pre>"; 
+                            
                                                 </div>
                                             </div>
                                         </td>

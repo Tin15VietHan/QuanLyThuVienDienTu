@@ -406,7 +406,31 @@ function cms_cruser() {
         cms_adapter_ajax($param);
     }
 }
+/***************************/
+function openFileSelector() {
+    var conf = confirm('Bạn chắc chắn muốn xóa!');
+    // Tạo một đối tượng input để chọn tệp
+    var fileInput = document.createElement('input');
+    
+    // Thiết lập loại input là 'file'
+    fileInput.type = 'file';
+    
+    // Gắn sự kiện onchange cho input để xử lý khi người dùng chọn một tệp
+    fileInput.addEventListener('change', function(event) {
+        // Lấy tệp được chọn
+        var selectedFile = event.target.files[0];
+        
+        // Xử lý tệp được chọn ở đây (ví dụ: tải lên máy chủ, xử lý dữ liệu, v.v.)
+        console.log('Đã chọn tệp:', selectedFile.name);
+        
+        // Sau khi xử lý xong, bạn có thể muốn chuyển hướng người dùng đến trang khác hoặc làm bất kỳ điều gì khác.
+    });
+    
+    // Kích hoạt hộp thoại chọn tệp bằng cách kích hoạt sự kiện click trên input
+    fileInput.click();
+}
 
+/***************************/
 function cms_upuser() {
     var $param = {
         'type': 'POST',
@@ -429,11 +453,13 @@ function cms_upuser() {
 function cms_save_item_user(id) {
     var $display_name = $('#user .table-user tr.edit-tr-item-' + id + ' td.itdisplay_name input').val();
     var $mail = $('#user .table-user tr.edit-tr-item-' + id + ' td.itemail input').val();
+    var $group = $('#user .table-user tr.edit-tr-item-' + id + ' td.itgroup_name #sel-group').val();
     var $data = {
         'data': {
             'id': id,
             'display_name': $display_name,
             'email': $mail,
+            'group_id': $group
         }
     };
     var $param = {
