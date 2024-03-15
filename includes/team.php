@@ -83,10 +83,10 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img  src="../assets/img/team/1.jpg" class="img-fluid" alt="">
+                <img  src="../assets/img/team/7.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.facebook.com/thuy.nhung.585"><i class="bi bi-facebook"></i></a>
+                  <a href="https://zalo.me/0948000458"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
@@ -103,8 +103,8 @@
               <div class="member-img">
                 <img src="../assets/img/team/2.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.facebook.com/giang.caothi.900"><i class="bi bi-facebook"></i></a>
+                  <a href="https://zalo.me/0339093582"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
@@ -121,8 +121,8 @@
               <div class="member-img">
                 <img src="../assets/img/team/3.jpg" class="img-fluid" alt="">
                 <div class="social">
-                <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/nguyen.khac.anh.quoc.20092002"><i class="bi bi-facebook"></i></a>
+                  <a href="https://zalo.me/0799339567"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
@@ -139,8 +139,8 @@
               <div class="member-img">
                 <img src="../assets/img/team/4.jpg" class="img-fluid" alt="">
                 <div class="social">
-                <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/wellcome.wall.ledangquoc.info"><i class="bi bi-facebook"></i></a>
+                  <a href="https://zalo.me/0862635207"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
@@ -157,8 +157,8 @@
               <div class="member-img">
                 <img src="../assets/img/team/5.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.facebook.com/100040950440687"><i class="bi bi-facebook"></i></a>
+                  <a href="https://zalo.me/963980103"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
@@ -175,8 +175,8 @@
               <div class="member-img">
                 <img src="../assets/img/team/6.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.facebook.com/vakyler02"><i class="bi bi-facebook"></i></a>
+                  <a href="https://zalo.me/0931367109"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
