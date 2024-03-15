@@ -554,7 +554,7 @@ function cms_change_password() {
                     $('.form-hide').slideUp('200');
                     $('#btn-changepass').show();
                 } else if (data == '0') {
-                    $('.ajax-error-ct').html('Mật khẩu củ không đúng!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    $('.ajax-error-ct').html('Mật khẩu cũ không đúng!').parent().fadeIn().delay(1000).fadeOut('slow');
                 } else {
                     $('.ajax-error-ct').html(data).parent().fadeIn().delay(1000).fadeOut('slow');
                 }
